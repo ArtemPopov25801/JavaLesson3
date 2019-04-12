@@ -1,29 +1,26 @@
 import java.util.Arrays;
 
-public class Student implements Humanoid {
+public class Pupil implements Humanoid {
 
     private String name;
     private String surename;
     private int age;
-    private String university;
     private String[] lessons;
 
 
-    public Student() {
+    public Pupil() {
         name = "Artem";
         surename = "Popov";
         age = 26;
-        university = "Sharaga";
         lessons = new String[]{"math", "language", "physics"};
-
     }
 
-    public Student(String name, String surename, String university, int age, String... lessons) {
+    public Pupil(String name, String surename, int age, String... lessons) {
         this.name = name;
         this.surename = surename;
         this.age = age;
-        this.university = university;
         this.lessons = lessons;
+
     }
 
 
@@ -51,28 +48,20 @@ public class Student implements Humanoid {
         this.age = age;
     }
 
-    public String getUniversity() {
-        return university;
-    }
-
-    public void setUniversity(String university) {
-        this.university = university;
-    }
-
     public String  getLessonByIndex(int index) {
         return lessons[index];
 
     }
 
     public void setLessonByIndex(int index, String lesson){
-       this.lessons[index] = lesson ;
+        this.lessons[index] = lesson ;
 
     }
 
     public String getLessonsString(){
         String result = "" ;
         for (int i = 0; i < lessons.length; i++){
-            result += lessons[i];
+             result += lessons[i];
             if ( i != lessons.length - 1 ){
                 result += " ";
             }
@@ -85,23 +74,21 @@ public class Student implements Humanoid {
         return "Имя: " + name + "\n" +
                 "Фамилия: " + surename + "\n" +
                 "Возраст: " + age + "\n" +
-                "Университет: " + university + "\n" +
                 "Предметы: " + getLessonsString();
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Student)) return false;
+        if (!(o instanceof Pupil)) return false;
 
-        Student student = (Student) o;
+        Pupil pupil = (Pupil) o;
 
-        if (age != student.age) return false;
-        if (name != null ? !name.equals(student.name) : student.name != null) return false;
-        if (surename != null ? !surename.equals(student.surename) : student.surename != null) return false;
-        if (university != null ? !university.equals(student.university) : student.university != null) return false;
+        if (age != pupil.age) return false;
+        if (name != null ? !name.equals(pupil.name) : pupil.name != null) return false;
+        if (surename != null ? !surename.equals(pupil.surename) : pupil.surename != null) return false;
         // Probably incorrect - comparing Object[] arrays with Arrays.equals
-        return Arrays.equals(lessons, student.lessons);
+        return Arrays.equals(lessons, pupil.lessons);
 
     }
 
@@ -110,9 +97,9 @@ public class Student implements Humanoid {
         int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (surename != null ? surename.hashCode() : 0);
         result = 31 * result + age;
-        result = 31 * result + (university != null ? university.hashCode() : 0);
         result = 31 * result + Arrays.hashCode(lessons);
         return result;
     }
-
 }
+
+
