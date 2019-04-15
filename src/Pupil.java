@@ -48,25 +48,25 @@ public class Pupil implements Humanoid {
         this.age = age;
     }
 
-    public String  getLessonByIndex(int index) {
+    public String getLessonByIndex(int index) {
         return lessons[index];
 
     }
 
-    public void setLessonByIndex(int index, String lesson){
-        this.lessons[index] = lesson ;
+    public void setLessonByIndex(int index, String lesson) {
+        this.lessons[index] = lesson;
 
     }
 
-    public String getLessonsString(){
-        String result = "" ;
-        for (int i = 0; i < lessons.length; i++){
-             result += lessons[i];
-            if ( i != lessons.length - 1 ){
+    public String getLessonsString() {
+        String result = "";
+        for (int i = 0; i < lessons.length; i++) {
+            result += lessons[i];
+            if (i != lessons.length - 1) {
                 result += " ";
             }
         }
-        return  result;
+        return result;
     }
 
     @Override
