@@ -11,7 +11,7 @@ public interface Humanoid {
 
     int getAge();
 
-    void setAge(int age);
+    void setAge(int age) throws WrongAgeException;
 
     String getLessonByIndex(int index);
 

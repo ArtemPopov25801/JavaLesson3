@@ -47,7 +47,10 @@ public class Student implements Humanoid {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(int age) throws WrongAgeException {
+        if (age < 14 || age > 45) {
+            throw new WrongAgeException(age, "Введён некорректный возраст");
+        }
         this.age = age;
     }
 

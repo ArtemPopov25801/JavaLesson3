@@ -49,11 +49,17 @@ public class Pupil implements Humanoid {
     }
 
     public String getLessonByIndex(int index) {
+        if (index < 0) {
+            throw new NegativeIndexException(index, "Получен отрицательный индекс");
+        }
         return lessons[index];
 
     }
 
     public void setLessonByIndex(int index, String lesson) {
+        if (index < 0) {
+            throw new NegativeIndexException(index, "Получен отрицательный индекс");
+        }
         this.lessons[index] = lesson;
 
     }
@@ -100,6 +106,7 @@ public class Pupil implements Humanoid {
         result = 31 * result + Arrays.hashCode(lessons);
         return result;
     }
+
 }
 
 

@@ -15,6 +15,7 @@ public class Main {
 
         for (Humanoid humanoid : array) {
             System.out.println(humanoid);
+
         }
 
         List<Humanoid> duplicates = new ArrayList<>();
@@ -50,6 +51,18 @@ public class Main {
             System.out.println(humanoid);
         }
 
+        /*Pupil pupil = new Pupil();
+        pupil.setLessonByIndex(-50,"aaa");
+        System.out.println(pupil.getLessonByIndex(-50));*/ // Раскомментировать для демонстрации RuntimeException
+
+        Student student = new Student();
+        try {
+            student.setAge(11);
+        } catch (WrongAgeException ex) {
+            System.out.println(ex.toString());
+        } finally {
+            System.out.println("Это финальный блок");
+        }
     }
 
 }
